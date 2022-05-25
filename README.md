@@ -59,3 +59,8 @@ Need help on how to run this tool?  Just run the command without options to see 
 ```bash
 sfcc-catalog-pricebook
 ```
+
+Disclaimer
+---
+
+> The trademarks and product names of Salesforce®, including the mark Salesforce®, are the property of Salesforce.com. SFCC DevOps is not affiliated with Salesforce.com, nor does Salesforce.com sponsor or endorse the SFCC DevOps products or website. The use of the Salesforce® trademark on this project does not indicate an endorsement, recommendation, or business relationship between Salesforce.com and SFCC DevOps.

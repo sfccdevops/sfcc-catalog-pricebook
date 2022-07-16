@@ -1,17 +1,34 @@
 {
   "name": "@sfccdevops/sfcc-catalog-pricebook",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Create Salesforce Commerce Cloud Pricebook XML from Catalog XML",
   "homepage": "https://github.com/sfccdevops/sfcc-catalog-pricebook#readme",
-  "main": "bin/index.js",
+  "license": "MIT",
+  "main": "bin/cli.js",
   "bin": {
-    "sfcc-catalog-pricebook": "bin/index.js"
+    "sfcc-catalog-pricebook": "bin/cli.js"
+  },
+  "engines": {
+    "node": ">=14.17.3",
+    "npm": ">= 6.14.13"
   },
   "keywords": [
     "salesforce",
     "sfcc",
     "catalog",
     "pricebook"
+  ],
+  "contributors": [
+    {
+      "name": "Peter Schmalfeldt",
+      "email": "me@peterschmalfeldt.com",
+      "url": "https://peterschmalfeldt.com"
+    },
+    {
+      "name": "Stephen Hendricks",
+      "email": "stephen.hendricks87@gmail.com",
+      "url": "https://stephenhendricks.me/"
+    }
   ],
   "repository": {
     "type": "git",
@@ -21,22 +38,28 @@
     "url": "https://github.com/sfccdevops/sfcc-catalog-pricebook/issues"
   },
   "scripts": {
-    "lint": "eslint --ext .js ./"
+    "test": "eslint --ext .js ./ --fix && echo '\n【ツ】CODE PERFECTION !!!\n'"
   },
-  "license": "MIT",
+  "lint-staged": {
+    "*.js": [
+      "eslint . --fix",
+      "git add"
+    ]
+  },
   "dependencies": {
-    "chalk": "^4.1.0",
+    "chalk": "^4.1.2",
     "lodash": "^4.17.21",
-    "ora": "^4.0.5",
+    "ora": "^5.4.1",
     "xml2js": "^0.4.23",
-    "yargs": "^15.4.1"
+    "yargs": "^17.5.1"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.17.0"
-  },
-  "directories": {
-    "doc": "docs",
-    "lib": "lib"
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1"
   }
 }

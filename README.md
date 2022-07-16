@@ -29,7 +29,7 @@ Name        | Param           | Alias      | Required | Default Value | Definiti
 ------------|-----------------|------------|----------|---------------|---------------------
 Input       | `--input`       | `-i`       | Yes      |               | Path to SFCC Catalog XML File
 Output      | `--output`      | `-o`       | No       | pricebook.xml | Path to save XML file ( Defaults to Current Directory )
-Name        | `--name`        | `-n`       | No       |               | Name of Pricebook ( Defaults to Catalog Name )
+Name        | `--name`        | `-n`       | No       |               | Display Name of Pricebook ( Defaults to Title Cased Catalog Name )
 ID          | `--id`          |            | No       |               | ID of Pricebook ( Defaults to Catalog Name )
 Description | `--description` | `-d`       | No       |               | Description of Pricebook
 Currency    | `--currency`    | `-c`       | No       | USD           | Currency of Pricebook
@@ -41,14 +41,22 @@ Max Amount  | `--max-amount`  | `-x`       | No       | 589.99        | Maximum 
 ```bash
 sfcc-catalog-pricebook -i /path/to/catalog.xml
 
-sfcc-catalog-pricebook -i /path/to/catalog.xml -n custom-name
-sfcc-catalog-pricebook --input /path/to/catalog.xml --name custom-name
+sfcc-catalog-pricebook -i /path/to/catalog.xml --id custom-name
+
+sfcc-catalog-pricebook -i /path/to/catalog.xml -m 1.99 -x 10.99 -c USD
+sfcc-catalog-pricebook --input /path/to/catalog.xml --min-amount 1.99 --max-amount 10.99 --currency USD
+
+sfcc-catalog-pricebook -i /path/to/catalog.xml -d 'My Description of Pricebook'
+sfcc-catalog-pricebook --input /path/to/catalog.xml --description 'My Description of Pricebook'
+
+sfcc-catalog-pricebook -i /path/to/catalog.xml -n "My Pricebook Display Name"
+sfcc-catalog-pricebook --input /path/to/catalog.xml --name "My Pricebook Display Name"
 
 sfcc-catalog-pricebook -i /path/to/catalog.xml -o /path/to/pricebook.xml
 sfcc-catalog-pricebook --input /path/to/catalog.xml --output /path/to/pricebook.xml
 
-sfcc-catalog-pricebook -i /path/to/catalog.xml -n custom-name -o /path/to/pricebook.xml
-sfcc-catalog-pricebook --input /path/to/catalog.xml --name custom-name --output /path/to/pricebook.xml
+sfcc-catalog-pricebook -i /path/to/catalog.xml -n "My Pricebook Display Name" -o /path/to/pricebook.xml
+sfcc-catalog-pricebook --input /path/to/catalog.xml --name "My Pricebook Display Name" --output /path/to/pricebook.xml
 ```
 
 Troubleshooting
@@ -59,6 +67,11 @@ Need help on how to run this tool?  Just run the command without options to see 
 ```bash
 sfcc-catalog-pricebook
 ```
+
+About the Author
+---
+
+> [Peter Schmalfeldt](https://peterschmalfeldt.com/) is a Certified Senior Salesforce Commerce Cloud Developer with over 20 years of experience building eCommerce websites, providing everything you need to design, develop & deploy eCommerce applications for Web, Mobile & Desktop platforms.
 
 Disclaimer
 ---
